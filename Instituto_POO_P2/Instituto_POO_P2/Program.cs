@@ -151,12 +151,27 @@ namespace Instituto_POO_P2
         {
             Aula L4 = new Aula();
 
-
+            // Codigo para instanciar muebles y crear la lista de muebles para aula
+            //L4.IdAula = "104B";
+            //Mueble M1 = new Mueble();
+            //M1.Id_Mueble = "M1L4";
+            //M1.Tipo = TipoMueble.Silla;
+            //M1.Patas = NroPatas.Patas4;
+            //L4.Mobiliaria = new List<Mueble>();
+            //L4.Mobiliaria.Add(M1);
 
             Cafeteria_Isur.Cafeteria C = new Cafeteria_Isur.Cafeteria();
             C.Nombre = "La Cafeta";
             Console.WriteLine(C.Nombre);
 
+            //Codigo para Mostrar los muebles de la aula
+            //Console.WriteLine(L4.IdAula);
+            //foreach(Mueble muebles in L4.Mobiliaria)
+            //{
+            //    Console.WriteLine(muebles.Tipo);
+            //    Console.WriteLine(muebles.Id_Mueble);
+            //    Console.WriteLine(muebles.Patas);
+            //}
 
             Console.ReadLine();
         }

@@ -76,25 +76,33 @@ namespace Cafeteria_Isur
     }
 
 }
-
+// ESPACIO DE TRABAJO DE INSTITUTO
+// CHRISTIAN VILCA APAZA
+// CLASE AULA
 namespace Instituto_POO_P2
 {
     class Edificio
     {
-        List<Aula> Aulas { get; set; }
+        public List<Aula> Aulas { get; set; }
+    }
+    class Piso
+    {
+        public Byte NroPiso { get; set; }
+        public List<Aula> ListaAulas { get; set; }
     }
     class Aula
     {
-        float[] Color = new float[4];
-        List<Mueble> Mobiliaria { get; set; }
-        List<Material> Materiales { get; set; }
-        List<Luz> Luces { get; set; }
+        public string IdAula { get; set; }
+        public float[] Color = new float[4];
+        public List<Mueble> Mobiliaria { get; set; }
+        public List<Material> Materiales { get; set; }
+        public List<Luz> Luces { get; set; }
     }
     class Mueble
     {
-        String id_Mueble { get; set; }
-        TipoMueble Tipo { get; set; }
-        NroPatas Patas { get; set; }
+        public String Id_Mueble { get; set; }
+        public TipoMueble Tipo { get; set; }
+        public NroPatas Patas { get; set; }
     }
     enum TipoMueble
     {
@@ -106,7 +114,7 @@ namespace Instituto_POO_P2
     }
     class Material
     {
-        TipoMaterial Tipo { get; set; }
+        public TipoMaterial Tipo { get; set; }
     }
     enum TipoMaterial
     {
@@ -114,8 +122,8 @@ namespace Instituto_POO_P2
     }
     class Luz
     {
-        String Marca { get; set; }
-        TipoLuz TipoLuces { get; set; }
+        public String Marca { get; set; }
+        public TipoLuz TipoLuces { get; set; }
     }
     enum TipoLuz
     {
@@ -143,9 +151,14 @@ namespace Instituto_POO_P2
         {
             Aula L4 = new Aula();
 
+
+
             Cafeteria_Isur.Cafeteria C = new Cafeteria_Isur.Cafeteria();
             C.Nombre = "La Cafeta";
             Console.WriteLine(C.Nombre);
+
+
+            Console.ReadLine();
         }
     }
 }

@@ -70,8 +70,15 @@ namespace Cafeteria_Isur
     }
     class Cafeteria
     {
-        internal string Nombre { get; set; }
-        internal Ambiente[] Ambientes { get; set; }
+        public string Nombre { get; set; }
+        public Ambiente[] Ambientes { get; set; }
+        List<Mueble> Mobiliaria {get;set;}
+        public string prueba{get;set;}
+        public Cafeteria(string? nombre="La Cafeta",string? Prueba="Hola"){
+            Nombre=nombre;
+            prueba=Prueba;
+            Mobiliaria=new List<Mueble>();
+        }
         
     }
 
@@ -97,6 +104,9 @@ namespace Instituto_POO_P2
         public List<Mueble> Mobiliaria { get; set; }
         public List<Material> Materiales { get; set; }
         public List<Luz> Luces { get; set; }
+        public Aula(){
+            Mobiliaria = new List<Mueble>();
+        }
     }
     class Mueble
     {
@@ -157,12 +167,13 @@ namespace Instituto_POO_P2
             M1.Id_Mueble = "M1L4";
             M1.Tipo = TipoMueble.Silla;
             M1.Patas = NroPatas.Patas4;
-            L4.Mobiliaria = new List<Mueble>();
+/*             L4.Mobiliaria = new List<Mueble>(); */
             L4.Mobiliaria.Add(M1);
 
-            Cafeteria_Isur.Cafeteria C = new Cafeteria_Isur.Cafeteria();
-            C.Nombre = "La Cafeta";
-            Console.WriteLine(C.Nombre);
+            Cafeteria_Isur.Cafeteria C = new Cafeteria_Isur.Cafeteria("hola2");
+
+/*             C.Nombre = "La Cafeta";
+ */            Console.WriteLine(C.Nombre + C.prueba);
 
 /*             Codigo para Mostrar los muebles de la aula */
             Console.WriteLine(L4.IdAula);

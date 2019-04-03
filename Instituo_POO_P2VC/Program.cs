@@ -73,10 +73,12 @@ namespace Cafeteria_Isur
         public string Nombre { get; set; }
         public Ambiente[] Ambientes { get; set; }
         List<Mueble> Mobiliaria {get;set;}
-        public string prueba{get;set;}
-        public Cafeteria(string? nombre="La Cafeta",string? Prueba="Hola"){
+        public string Prueba{get;set;}
+        
+        // Constructor creado con parametros opcionales  y que puede estar en desorden 
+        public Cafeteria(string nombre="La Cafeta",string prueba="Hola"){
             Nombre=nombre;
-            prueba=Prueba;
+            Prueba=prueba;
             Mobiliaria=new List<Mueble>();
         }
         
@@ -169,11 +171,11 @@ namespace Instituto_POO_P2
             M1.Patas = NroPatas.Patas4;
 /*             L4.Mobiliaria = new List<Mueble>(); */
             L4.Mobiliaria.Add(M1);
+//          Prueba de sobrecarga con solo un parametro y en desorden
+            Cafeteria_Isur.Cafeteria C = new Cafeteria_Isur.Cafeteria(prueba: "hola2");
 
-            Cafeteria_Isur.Cafeteria C = new Cafeteria_Isur.Cafeteria("hola2");
-
-/*             C.Nombre = "La Cafeta";
- */            Console.WriteLine(C.Nombre + C.prueba);
+/*             C.Nombre = "La Cafeta"; */            
+            Console.WriteLine(C.Nombre+" " + C.Prueba);
 
 /*             Codigo para Mostrar los muebles de la aula */
             Console.WriteLine(L4.IdAula);

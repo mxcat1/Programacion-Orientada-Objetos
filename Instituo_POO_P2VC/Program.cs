@@ -47,8 +47,8 @@ namespace Cafeteria_Isur
     }
     class Producto
     {
-        String Nombre { get; set; }
-        DateTime fechaVence { get; set; }
+        public String Nombre { get; set; }
+        public DateTime fechaVence { get; set; }
 
     }
     class Sandwich:Producto
@@ -174,6 +174,12 @@ namespace Instituto_POO_P2
 //          Prueba de sobrecarga con solo un parametro y en desorden
             Cafeteria_Isur.Cafeteria C = new Cafeteria_Isur.Cafeteria(prueba: "hola2");
 
+// INstanciar sin constructor pero enviando los parametros en la instanciacion
+            Cafeteria_Isur.Producto ProductoA1= new Cafeteria_Isur.Producto(){
+                Nombre="Juguito",
+                fechaVence=DateTime.Today
+            };
+            Console.WriteLine(ProductoA1.Nombre+" "+ProductoA1.fechaVence);
 /*             C.Nombre = "La Cafeta"; */            
             Console.WriteLine(C.Nombre+" " + C.Prueba);
 

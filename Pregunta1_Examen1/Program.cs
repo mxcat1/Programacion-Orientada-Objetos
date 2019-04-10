@@ -8,6 +8,25 @@ using System.Threading.Tasks;
 
 namespace Biblioteca_Isur
 {
+    class Biblioteca{
+        // Agregacion
+        public Producto Producto_Biblio{get;set;}
+        //COmposicion
+        public Autor AutorP1=new Autor();
+        //Agregacion
+        public void Prestamos(Producto Producto_Biblio){
+            Console.WriteLine("Hola");
+        }
+        public void Sanciones(){
+            Console.WriteLine("Hola");
+        }
+        public void EntradaProducto(Autor AutorP1){
+            Console.WriteLine("Hola");
+        }
+        public void Restauraciones(){
+            Console.WriteLine("Hola");
+        }
+    }
 
     class Persona{
         public string NomPersona{get;set;}
@@ -21,7 +40,7 @@ namespace Biblioteca_Isur
         // Se cambio la lista de plibros por la de productos
         public List<Producto> ListaProductos {get;set;}
         public Autor(){
-            ListaLibros = new List<Libro>();
+            ListaProductos = new List<Producto>();
         }
     }
     class Adminstrador:Persona{
@@ -68,7 +87,7 @@ namespace Biblioteca_Isur
     class Editorial{
 
     }
-    class Operaciones{
+/*     class Operaciones{
         public void Prestamos{
 
         }
@@ -81,12 +100,14 @@ namespace Biblioteca_Isur
         public void Restauraciones{
 
         }
-    }
+    } */
     class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            Biblioteca Biblio_1=new Biblioteca();
+            Biblio_1.Sanciones();
         }
     }
 }

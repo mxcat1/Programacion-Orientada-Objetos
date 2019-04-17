@@ -54,7 +54,7 @@ namespace Ajedrez
     class Tablero{
         Casillero[,] TableroCasillero;
         public Tablero(){
-
+            TableroCasillero = new Casillero[8,8]
         }
     }
     class JuegoAjedrez{

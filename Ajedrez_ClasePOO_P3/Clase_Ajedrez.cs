@@ -8,13 +8,13 @@ using System.Drawing;
 namespace Ajedrez
 {
     public class Coordenada{
-        public int x;public int y;
+        public string x;public int y;
     }
     public class Pieza{
 
         public Color ColorPieza{get;set;}
         public bool Activo{get;set;}
-        public bool PuedeAscender{get;set;}
+        // public bool PuedeAscender{get;set;}
         public Coordenada Posicion {get;set;}
         //------------- Metodos
         public void Mover(){
@@ -24,8 +24,15 @@ namespace Ajedrez
 
         }
     }
+    public enum TipoPieza{
+        ninguna=0,Caballo=1
+    }
     public class Peon:Pieza{
-
+        public bool PuedeAscender{get;set;}
+        //Error creo q se debe crear una funcion para cada uno de las ascenciones
+        public void AscenderPeon(Peon PeonJuego,TipoPieza PiezaAConvertir){
+            PeonJuego = (PiezaAConvertir)PeonJuego;
+        }
     }
     public class Caballo:Pieza{
         
@@ -42,27 +49,34 @@ namespace Ajedrez
     public class Torre:Pieza{
         
     }
-    class Persona{
+    // class Persona{
 
-    }
-    class Jugador:Persona{
+    // }
+    class Jugador{
+        public int IdJugador{get;set;}
+        public string NickName{get;set;}
+        public Peon[] PeonJugador;
+        public Reina ReinaJugador;
+        public Rey ReyJugador;
+
 
     }
     class Casillero{
-
+        public string Vertical{get;set;}
+        public int Horizontal{get;set;}
     }
     class Tablero{
         Casillero[,] TableroCasillero;
         public Tablero(){
-            TableroCasillero = new Casillero[8,8]
+            TableroCasillero = new Casillero[8,8];
         }
     }
     class JuegoAjedrez{
         Tablero TableroJuegoAjedrez {get;set;}
         Jugador[] _Jugadores;
 
-        public JuegoAjedrez(){
-            _Jugadores = new Jugador();
+        public JuegoAjedrez(int CantidadJugadores){
+            _Jugadores = new Jugador[CantidadJugadores];
         }
     }
 

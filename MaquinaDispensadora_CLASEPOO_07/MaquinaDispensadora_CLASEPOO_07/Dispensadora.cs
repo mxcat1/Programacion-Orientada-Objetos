@@ -6,6 +6,34 @@ using System.Threading.Tasks;
 
 namespace MaquinaDispensadora_CLASEPOO_07
 {
+    public class Teclado
+    {
+        Boton[,] _botones;
+        public Teclado(int fil,int col)
+        {
+            _botones = new Boton[fil,col];
+            for (int f = 0; f < fil; f++) {
+                for (int c = 0; c < col; c++) {
+                    _botones[f, c] = new Boton();
+                }
+            }
+        }
+    }
+    public class Boton
+    {
+        string _etiqueta;
+
+        public string etiqueta
+        {
+            get { return _etiqueta; }
+            set { _etiqueta = value; }
+        }
+
+        public Boton(string valor="?")
+        {
+            _etiqueta = valor;
+        }
+    }
     public class RespuestaMetodo
     {
         public int Codigo { get; set; }
@@ -47,7 +75,10 @@ namespace MaquinaDispensadora_CLASEPOO_07
         {
             _BandejaDispensador = null;
         }
-
+        public object[] Despachar(float monto,Boton[] botones)
+        {
+            return null;
+        }
     }
     public class Bandeja
     {

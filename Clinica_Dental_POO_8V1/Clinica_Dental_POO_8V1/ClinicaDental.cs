@@ -8,6 +8,18 @@ namespace Clinica_Dental_POO_8V1
 {
     class ClinicaDental
     {
+        Cliente Clientecli;
+        //Doctor[] DoctoresOdo;
+        //AsistenteDental[] AsistenteOdo;
+        Persona[,] DoctorAsistente;
+        public ClinicaDental(int ndoctores)
+        {
+            Clientecli = new Cliente();
+            DoctorAsistente = new Persona[ndoctores,2];
+            DoctorAsistente[0, 0] = new Doctor();
+            DoctorAsistente[0, 1] = new AsistenteDental();
+
+        }
 
     }
     public class Persona
@@ -35,7 +47,14 @@ namespace Clinica_Dental_POO_8V1
     public class Doctor :Persona
     {
         Cita citaDoctorPaciente;
-        public void AtenderCita()
+
+        public Cita CitaDoctorPaciente { get => citaDoctorPaciente; set => citaDoctorPaciente = value; }
+
+        public void AtenderCita(Cita cita)
+        {
+
+        }
+        public void GestionarCita(Cita cita)
         {
 
         }
@@ -76,6 +95,8 @@ namespace Clinica_Dental_POO_8V1
 
         
     }
+    // la anamnesi es un documento donde se hace varias preguntas sobre el paciente incluye sus alergias
+    // cirugias y mas
     public class Anamnesi
     {
         string[][,] _PreguntasRepuestas;

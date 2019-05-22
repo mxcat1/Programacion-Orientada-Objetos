@@ -10,6 +10,7 @@ namespace Clinica_Dental_POO_8V1
     {
         static void Main(string[] args)
         {
+            ClinicaDental c1 = new ClinicaDental(2);
         }
     }
 }

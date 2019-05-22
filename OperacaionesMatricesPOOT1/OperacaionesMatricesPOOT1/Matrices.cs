@@ -97,7 +97,7 @@ namespace OperacaionesMatricesPOOT1
             }
             return c;
         }
-        // Multiplicacion de matrices
+        //Sobrecarga de Multiplicacion de matrices
         public static Matriz operator *(Matriz a, Matriz b){
             Matriz c = new Matriz(a.columMatriz);
             double almacenado;

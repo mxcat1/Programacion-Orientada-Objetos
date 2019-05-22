@@ -24,10 +24,12 @@ namespace OperacaionesMatricesPOOT1
             b.llenarmatrizale(10, 20);
             Console.WriteLine("Matriz " + nameof(b));
             b.verMatriz();
+            //solo para matrices de 3x3
             Matriz prueba = new Matriz();
             prueba.llenarmatriz(1,2,3,4,5,6,7,8,9);
             Console.WriteLine("Matriz " + nameof(prueba));
             prueba.verMatriz();
+            //XD
 
             Matriz c = a - b;
             Console.WriteLine(string.Format("Suma de Matriz {0} Mas Matriz {1} igual a Matriz {2}", nameof(a), nameof(b), nameof(c)));

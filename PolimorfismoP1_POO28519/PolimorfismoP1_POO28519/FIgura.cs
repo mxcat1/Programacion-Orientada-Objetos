@@ -13,6 +13,10 @@ namespace PolimorfismoP1_POO28519
         {
             return area;
         }
+        public virtual void DibujarFigura()
+        {
+            Console.WriteLine("hola");
+        }
     }
     class Rectangulo : Figura
     {
@@ -31,12 +35,24 @@ namespace PolimorfismoP1_POO28519
             get { return ancho; }
             set { ancho = value; }
         }
+        public Rectangulo(double l,double a)
+        {
+            Largo = l;
+            Ancho = a;
+        }
         public override double CalcularArea()
         {
             area = Largo * Ancho;
             return area;
         }
-
+        public override void DibujarFigura()
+        {
+            Console.WriteLine("------------");
+            Console.WriteLine("|          |");
+            Console.WriteLine("|          |");
+            Console.WriteLine("|          |");
+            Console.WriteLine("------------");
+        }
     }
     class Circunferencia : Figura
     {
@@ -47,10 +63,22 @@ namespace PolimorfismoP1_POO28519
             get { return radio; }
             set { radio = value; }
         }
+        public Circunferencia(double radio)
+        {
+            Radio = radio;
+        }
         public override double CalcularArea()
         {
 
             return area=Math.PI*(radio*radio);
+        }
+        public override void DibujarFigura()
+        {
+            Console.WriteLine("--/--------");
+            Console.WriteLine("-/----------");
+            Console.WriteLine("|-----------");
+            Console.WriteLine("'\'----------");
+            Console.WriteLine("-'\'---------");
         }
 
 
@@ -72,9 +100,25 @@ namespace PolimorfismoP1_POO28519
             get { return ancho; }
             set { ancho = value; }
         }
+        public Triangulo(double al, double a)
+        {
+            Altura = al;
+            Ancho = a;
+        }
+        //public static implicit operator Triangulo(double[] datos)
+        //{
+        //    return new Triangulo(datos[1],datos[2]);
+        //}
         public override double CalcularArea()
         {
             return (area=Altura*Ancho)/2;
+        }
+        public override void DibujarFigura()
+        {
+            Console.WriteLine("        *        ");
+            Console.WriteLine("       ***       ");
+            Console.WriteLine("      *****      ");
+            Console.WriteLine("     *******     ");
         }
     }
 }

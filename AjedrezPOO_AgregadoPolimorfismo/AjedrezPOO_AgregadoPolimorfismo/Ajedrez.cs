@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace Ajedrez
+namespace AjedrezPOO_AgregadoPolimorfismo
 {
     public class Coordenada
     {

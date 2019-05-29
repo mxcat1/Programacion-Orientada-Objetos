@@ -10,6 +10,7 @@ namespace AjedrezPOO_AgregadoPolimorfismo
     {
         static void Main(string[] args)
         {
+            JuegoAjedrez J1 = new JuegoAjedrez(2);
         }
     }
 }

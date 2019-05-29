@@ -53,17 +53,18 @@ namespace OperacaionesMatricesPOOT1
             }
         }
         // Mostrar matriz
-        public void verMatriz()
+        public string verMatriz()
         {
-
+            string matrizstring="";
             for (int x = 0; x < this.columMatriz; x++)
             {
                 for (int y = 0; y < this.columMatriz; y++)
                 {
-                    Console.Write(" | "+this[x, y] + "  ");
+                    matrizstring+=(" | "+this[x, y] + "  ");
                 }
-                Console.Write("| \n");
+                matrizstring+=("| \n");
             }
+            return matrizstring;
         }
 
 

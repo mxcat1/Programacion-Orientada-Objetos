@@ -19,25 +19,25 @@ namespace OperacaionesMatricesPOOT1
             Matriz a = new Matriz();
             a.llenarmatrizale(1,10);
             Console.WriteLine("Matriz "+nameof(a));
-            a.verMatriz();
+            Console.WriteLine(a.verMatriz());
             Matriz b = new Matriz();
             b.llenarmatrizale(10, 20);
             Console.WriteLine("Matriz " + nameof(b));
-            b.verMatriz();
+            Console.WriteLine(b.verMatriz());
             //solo para matrices de 3x3
             Matriz prueba = new Matriz();
             prueba.llenarmatriz(1,2,3,4,5,6,7,8,9);
             Console.WriteLine("Matriz " + nameof(prueba));
-            prueba.verMatriz();
+            Console.WriteLine( prueba.verMatriz());
             //XD
 
             Matriz c = a - b;
             Console.WriteLine(string.Format("Suma de Matriz {0} Mas Matriz {1} igual a Matriz {2}", nameof(a), nameof(b), nameof(c)));
-            c.verMatriz();
+            Console.WriteLine(c.verMatriz());
 
             Matriz d = a * b;
             Console.WriteLine(string.Format("Multiplicacion de Matriz {0} Por Matriz {1} igual a Matriz {2}", nameof(a), nameof(b), nameof(d)));
-            d.verMatriz();
+            Console.WriteLine(d.verMatriz());
 
             Console.ReadLine();
         }

@@ -16,7 +16,7 @@ namespace TareaInterfacesPOOv1
             F1.Total = 150;
             F1.Fecha = DateTime.Now;
 
-            Console.WriteLine(F1.MostrarDatos());
+            Console.WriteLine(((IDesplegable)F1).MostrarDatos());
             Console.WriteLine(F1.FechaConLetra());
             Console.WriteLine(F1.ToString());
             Console.WriteLine(F1.PruebaFecha(DateTime.Now));

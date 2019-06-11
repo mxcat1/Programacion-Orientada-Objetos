@@ -55,7 +55,7 @@ namespace TareaInterfacesPOOv1
             
             return $"{Fecha.Day} de {dtmont.GetMonthName(Fecha.Month)} del {Fecha.Year}"; ;
         }
-        public string MostrarDatos()
+        string IDesplegable.MostrarDatos()
         {
             string Datos = $"El Folio es {Folio} \n El Cliente es {Cliente} \n El Total es {Total} \n La Fecha es {Fecha}";
             return Datos;

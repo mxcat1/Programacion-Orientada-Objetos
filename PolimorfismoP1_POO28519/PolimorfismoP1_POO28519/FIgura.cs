@@ -6,16 +6,42 @@ using System.Threading.Tasks;
 
 namespace PolimorfismoP1_POO28519
 {
+    interface Icuadrado
+    {
+        double Lado
+        {
+            get;set;
+        }
+    }
+    interface IFiguraOperaciones
+    {
+        double CalcularArea();
+        double CalcularPerimetro();
+    }
     class Figura
     {
         public double area;
-        public virtual double CalcularArea()
+        public virtual double _CalcularArea()
         {
             return area;
         }
         public virtual void DibujarFigura()
         {
             Console.WriteLine("hola");
+        }
+    }
+    class Cuadrado : Figura, Icuadrado, IFiguraOperaciones
+    {
+        double _dblLado;
+        public double Lado { get => _dblLado; set => _dblLado=value; }
+
+        public double CalcularPerimetro()
+        {
+            return Lado*4;
+        }
+        public double CalcularArea()
+        {
+            return Lado * Lado;
         }
     }
     class Rectangulo : Figura
@@ -40,7 +66,7 @@ namespace PolimorfismoP1_POO28519
             Largo = l;
             Ancho = a;
         }
-        public override double CalcularArea()
+        public override double _CalcularArea()
         {
             area = Largo * Ancho;
             return area;
@@ -67,7 +93,7 @@ namespace PolimorfismoP1_POO28519
         {
             Radio = radio;
         }
-        public override double CalcularArea()
+        public override double _CalcularArea()
         {
 
             return area=Math.PI*(radio*radio);
@@ -109,7 +135,7 @@ namespace PolimorfismoP1_POO28519
         //{
         //    return new Triangulo(datos[1],datos[2]);
         //}
-        public override double CalcularArea()
+        public override double _CalcularArea()
         {
             return (area=Altura*Ancho)/2;
         }

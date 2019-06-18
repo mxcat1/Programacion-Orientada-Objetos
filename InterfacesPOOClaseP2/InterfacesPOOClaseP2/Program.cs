@@ -16,32 +16,33 @@ namespace InterfacesPOOClaseP2
             return this.codigo.CompareTo(E1.codigo);
         }
     }
-    class Alumno : IComparable
+    class Alumno<T> : IComparable<T>
     {
         string Codigo { get; set; }
         public Alumno(string codigo = "")
         {
             this.Codigo = codigo;
         }
-        //public static implicit operator Alumno(object i)
-        //{
-        //    return new Alumno(i.ToString());
-        //}
-        //public int CompareTo(object obj)
-        //{
-
-        //    Alumno nalumno = obj;
-
-        //}
-        public int CompareTo(object obj)
+        public static implicit operator Alumno<T>(T i)
         {
-            return 0;
+            return new Alumno<T>(i.ToString());
         }
+        public int CompareTo(T obj)
+        {
+
+            Alumno<T> nalumno = obj;
+            return (nalumno.Codigo == this.Codigo) ? 0 : 1;
+
+        }
+
     }
     class Program
     {
         static void Main(string[] args)
         {
+            Alumno<double> a1 = new Alumno<double>("1.6");
+            Console.WriteLine(a1.CompareTo(1.6));
+            Console.ReadLine();
         }
     }
 }

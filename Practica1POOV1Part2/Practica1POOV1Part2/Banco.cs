@@ -18,37 +18,48 @@ namespace Pregunta2
             this.NombreCli = nombre;
             this.Cuenta = cuenta;
         }
+        public override string ToString()
+        {
+            return NombreCli;
+        }
 
     }
     interface ICuenta
     {
         double NCuenta { get; set; }
-        double SaldoCuenta { get; set; }
+        float SaldoCuenta { get; set; }
         string ConsultarDatos();
-        double Depositar();
-        string Retirar();
+        float Depositar(float canti);
+        string Retirar(float retiro);
     }
     abstract class Cuenta:ICuenta
     {
         protected double _NCuenta;
-        protected double _SaldoCuenta;
+        protected float _SaldoCuenta;
 
         public double NCuenta { get => _NCuenta; set => _NCuenta=value; }
-        public double SaldoCuenta { get => _SaldoCuenta; set => _SaldoCuenta=value; }
+        public float SaldoCuenta { get => _SaldoCuenta; set => _SaldoCuenta=value; }
 
         public string ConsultarDatos()
         {
-            throw new NotImplementedException();
+            return $" {this.NCuenta} ";
         }
 
-        public double Depositar()
+        public float Depositar(float canti)
         {
-            throw new NotImplementedException();
+
+            this.SaldoCuenta += canti;
+            return this.SaldoCuenta;
         }
 
-        public virtual string Retirar()
+        public virtual string Retirar(float retirar)
         {
-            throw new NotImplementedException();
+            this.SaldoCuenta -= retirar;
+            return this.SaldoCuenta.ToString();
+        }
+        public override string ToString()
+        {
+            return NCuenta.ToString();
         }
     }
     class CuentaCheques:Cuenta
@@ -66,7 +77,7 @@ namespace Pregunta2
         {
 
         }
-        public override string Retirar()
+        public override string Retirar(float retirar)
         {
 
             if (DateTime.Now == FecVec)

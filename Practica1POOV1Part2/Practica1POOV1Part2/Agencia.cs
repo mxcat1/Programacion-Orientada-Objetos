@@ -14,8 +14,7 @@ namespace Pregunta1
         string DireccionFiscal { get; set; }
         string Telefono { get; set; }
         string CorreoElectronico { get; set; }
-
-
+        void RegistrarPago(double p);
     }
     class Honorarios<T>
     {
@@ -28,6 +27,7 @@ namespace Pregunta1
         {
             return new Honorarios<T>(Cli);
         }
+
     }
     abstract class Cliente:ICliente
     {
@@ -39,25 +39,25 @@ namespace Pregunta1
         public string CorreoElectronico { get; set; }
         private double Pago;
 
-        public void RegistrarPago(double p)
+        public virtual void RegistrarPago(double p)
         {
             this.Pago = p;
         }
     }
     class CliContado:Cliente
     {
-        private tipopago TipoPagoCli;
-        public void RegistrarTipoPago(tipopago t)
+        private FormaPago TipoPagoCli;
+        public void RegistrarTipoPago(FormaPago t)
         {
             this.TipoPagoCli = t;
         }
     }
     class CliCredito : Cliente
     {
-        public double LimiteCredito { get; set; }
+        public float LimiteCredito { get; set; }
         public DateTime PlazoMaximo { get; set; }
     }
-    enum tipopago
+    enum FormaPago
     {
         ninguno=0,efectivo=1,cheque=2,transferencia=3
     }

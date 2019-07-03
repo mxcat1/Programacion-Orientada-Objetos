@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace UniversoPOO02072019
 {
-    class EnteAstronomico
+    abstract class EnteAstronomico
     {
-        public string nombre { get; set; }
+        public string Nombre { get; set; }
         public double Diametro { get; set; }
+        public double TiempoVida { get; set; }
+        public float Gravedad { get; set; }
     }
     class Universo
     {
@@ -19,24 +21,44 @@ namespace UniversoPOO02072019
     {
         
         public Estrella OrbitaEstrella;
+        public Satelites[] SatelitePlaneta;
     }
     class Galaxias : EnteAstronomico
     {
-        public Planeta[] planetas;
+        public List<Planeta> PlanetasGalaxia;
+        public List<Estrella> EstrellasGalaxia;
+        public List<Asteroides> AsteroidesGalaxia;
+        public List<Cometas> CometasGalaxia;
+        public List<Cuasar> CuasaresGalaxias;
+        public Galaxias()
+        {
+            CuasaresGalaxias = new List<Cuasar>();
+        }
+        public void EstrellaaCuasar(Estrella E) {
+
+            CuasaresGalaxias.Add((Cuasar)E);
+        }
     }
     class Estrella : EnteAstronomico
     {
+        public Estrella()
+        {
 
+        }
     }
-    class Satelites
+    class Satelites:EnteAstronomico
+    {
+        
+    }
+    class Asteroides:EnteAstronomico
     {
 
     }
-    class Asteroides
+    class Cometas:EnteAstronomico
     {
 
     }
-    class Cometas
+    class Cuasar : Estrella
     {
 
     }
